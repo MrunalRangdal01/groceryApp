@@ -22,7 +22,7 @@
             align-items: center;
         }
 
-        .container {
+        .container-box {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -104,6 +104,71 @@
             text-decoration: none;
             /* Remove underline from the anchor tag */
         }
+
+        .testimonial-content {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .testimonial-content p {
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .testimonial-content h6 {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .footer-subscribe {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 50%;
+            margin-top: 10px;
+        }
+
+        .footer-subscribe .form-control {
+            width: 60%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .footer-subscribe .btn {
+            width: 40%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .product-card {
+            margin-bottom: 20px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .pagination li.active {
+            font-weight: bold;
+        }
+
+        .sidebar {
+            width: 25%;
+            float: left;
+            margin-right: 20px;
+        }
+
     </style>
 </head>
 
@@ -138,7 +203,7 @@
         <div class="background-div flex justify-content:center align-items: center;
     ">
 
-            <div class="container">
+            <div class="container-box">
                 <div class="inner-container">
                     <div class="content">
                         <span>Home <img src="assets/svg/arrowRight.svg" width="10"> Shop</span>
@@ -152,16 +217,124 @@
 
 
 
-    <div class="container text-center">
+<!-- Categories -->
+    <div class="container mt-4">
         <div class="row">
-            <div class="col">
-                Column 111
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group " id="categoryOptions">
+                            <label for="categories"><b>Categories</b></label>
+                            <div class="form-check" >
+                                <input type="checkbox" class="form-check-input" id="beverages" value="beverages" />
+                                <label class="form-check-label" for="category1">Beverages</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="biscuits" value="biscuits" />
+                                <label class="form-check-label" for="category2">Biscuits&Snacks</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="bf_dairy" value="bf_dairy" />
+                                <label class="form-check-label" for="category3">Breakfast & Dairy</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="fruit_veg" value="fruit_veg" />
+                                <label class="form-check-label" for="category3">Fruits & Vegetables</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="home_needs" value="home_needs""/>
+                                <label class="form-check-label" for="category3">Home Needs</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                Column
+
+
+            <div class="col-md-9">
+                <div class="row" id="product-container">
+
+                </div>
+
+
+                <ul id="pagination" class="pagination">
+                </ul>
             </div>
-            <div class="col">
-                Column
+        </div>
+    </div>
+
+    <!-- Price Filter  -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label for="priceRange"><b>Filter By Price</b></label>
+
+                            <input type="range" class="form-control-range" id="priceRange"
+                                style="accent-color: rgb(202, 224, 15);" min="0" max="200" step="10" value="200" />
+
+                        </div>
+                        <h6 class="card-title " style="color:rgb(202, 224, 15)">FILTER
+                            <img src="assets/svg/arrowRight.svg" width="10" style="padding-bottom: 6px;">
+                            <span id="priceOutput" class="" style="color: black; padding-left: 90px;">$0 - $200</span>
+                        </h6>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <div class="row" id="product-container">
+
+                </div>
+
+
+                <ul id="pagination" class="pagination">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trending Items  -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group " id="categoryOptions">
+                            <label for="trending_items"><b>Trending Items</b></label>
+                            <div class="container text-center">
+  <div class="col">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <div class="row" id="product-container">
+                </div>
+
+
+                <ul id="pagination" class="pagination">
+                </ul>
             </div>
         </div>
     </div>
