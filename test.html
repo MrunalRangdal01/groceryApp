@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groxi</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        .testimonial-content {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .testimonial-content p {
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .testimonial-content h6 {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .footer-subscribe {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 50%;
+            margin-top: 10px;
+        }
+
+        .footer-subscribe .form-control {
+            width: 60%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .footer-subscribe .btn {
+            width: 40%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .product-card {
+            margin-bottom: 20px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .pagination li.active {
+            font-weight: bold;
+        }
+
+        .sidebar {
+            width: 25%;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo" width="60" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <button class="btn btn-outline-primary mr-2">
+                    <i class="fas fa-heart"></i> Favorites
+                </button>
+                <button class="btn btn-outline-success">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="assets/banner.png" alt="Banner Image" class="img-fluid" />
+                <div class="text-center">
+                    <p>Home &rsaquo; Products</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="sort">Sort by:</label>
+
+                            <select id="sort">
+                                <option value="name">Name</option>
+                                <option value="price">Price</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="priceRange">Price Range:</label>
+
+                            <input type="range" class="form-control-range" id="priceRange" min="0"
+                                max="200" step="10" value="200" />
+
+                            <span id="priceOutput">$0 - $200</span>
+                        </div>
+                        <h5 class="card-title">Price Filter</h5>
+                        <div class="form-group " id="categoryOptions">
+                            <label for="categories">Categories:</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="beverages" value="beverages" />
+                                <label class="form-check-label" for="category1">Beverages</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="biscuits" value="biscuits" />
+                                <label class="form-check-label" for="category2">Biscuits&Snacks</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="bf_dairy" value="bf_dairy" />
+                                <label class="form-check-label" for="category3">Breakfast & Dairy</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="fruit_veg" value="fruit_veg" />
+                                <label class="form-check-label" for="category3">Fruits & Vegetables</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="home_needs"
+                                    value="home_needs" />
+                                <label class="form-check-label" for="category3">Home Needs</label>
+                            </div>
+                        </div>
+
+
+                        <button class="btn btn-primary">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <div class="row" id="product-container">
+
+                </div>
+
+
+                <ul id="pagination" class="pagination">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Testimonials</h2>
+        <div class="owl-carousel owl-theme" id="testimonial-carousel">
+            <div class="item">
+                <div class="testimonial-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h6>Rohit Sharma</h6>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="testimonial-content">
+                    <p>Praesent vehicula tortor vel feugiat. Nulla facilisi.</p>
+                    <h6>Shami</h6>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-content">
+                    <p>Vestibulum at felis id urna posuere euismod.</p>
+                    <h6>Kane Williamson</h6>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-content">
+                    <p>Vestibulum at felis id urna posuere euismod.</p>
+                    <h6>joe Root</h6>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-content">
+                    <p>Vestibulum at felis id urna posuere euismod.</p>
+                    <h6>David warner</h6>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-content">
+                    <p>Vestibulum at felis id urna posuere euismod.</p>
+                    <h6>Kholi</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="bg-secondary text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Subscribe to Our Newsletter</h5>
+                    <p>Stay updated with our latest news and updates.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Important Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Fruits and Vegetables</a></li>
+                        <li><a href="#">Dairy Products</a></li>
+                        <li><a href="#">Package Foods</a></li>
+                        <li><a href="#">Beverage</a></li>
+                        <li><a href="#">Health and Wellness</a></li>
+                        <li><a href="#">Meat Varities</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Your Website. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="input-group" style="width: 50%;">
+                        <input type="email" class="form-control" placeholder="Enter your email" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#testimonial-carousel").owlCarousel({
+                items: 3,
+                loop: true,
+                margin: 20,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 2,
+                    },
+                    1000: {
+                        items: 3,
+                    },
+                },
+            });
+        });
+    </script>
+    <script>
+        const products = [{
+                "name": "Product 1",
+                "price": 99.99,
+                "category": 'home_needs',
+                "image": "assets/products/basket.png"
+            },
+            {
+                "name": "Product 2",
+                "price": 49.99,
+                "category": 'beverages',
+                "image": "assets/products/40128176_8-emperia-masters-blend-tea-rich-taste.webp"
+            },
+            {
+                "name": "Product 3",
+                "price": 60.99,
+                "category": 'beverages',
+                "image": "assets/products/10000159_27-fresho-potato.webp"
+            },
+            {
+                "name": "Product 4",
+                "price": 98.99,
+                "category": 'home_needs',
+                "image": "assets/products/10000316_15-fresho-baby-potato.webp"
+            },
+            {
+                "name": "Product 5",
+                "price": 100.99,
+                "category": 'fruit_veg',
+                "image": "assets/products/10000204_16-fresho-tomato-local.webp"
+            },
+            {
+                "name": "Product 6",
+                "price": 52.99,
+                "category": 'fruit_veg',
+                "image": "assets/products/10000159_27-fresho-potato.webp"
+            },
+            {
+                "name": "Product 7",
+                "price": 85.99,
+                "category": 'fruit_veg',
+                "image": "assets/products/1201414_1-fresho-onion.webp"
+            },
+            {
+                "name": "Product 8",
+                "price": 101.99,
+                "category": 'home_needs',
+                "image": "assets/products/10000334_15-fresho-drumstickmoringa.webp"
+            },
+            {
+                "name": "Product 9",
+                "price": 56.99,
+                "category": 'home_needs',
+                "image": "assets/products/40005819_5-fresho-sambar-onion-peeled-small-onion.webp"
+            },
+            {
+                "name": "Product 10",
+                "price": 149.99,
+                "category": 'beverages',
+                "image": "assets/products/40092352_15-emperia-tulsi-green-tea.webp"
+            },
+            {
+                "name": "Product 11",
+                "price": 179.99,
+                "category": 'beverages',
+                "image": "assets/products/1204482_1-red-label-tea.webp"
+            },
+            {
+                "name": "Product 12",
+                "price": 199.99,
+                "category": 'bf_dairy',
+                "image": "assets/products/100285703_15-nandini-goodlife-toned-milk.webp"
+            },
+
+        ];
+
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        const productContainer = document.getElementById('product-container');
+        const paginationContainer = document.getElementById('pagination');
+        const sortSelect = document.getElementById('sort');
+
+        const priceRangeInput = document.getElementById('priceRange');
+        const priceOutput = document.getElementById('priceOutput');
+
+        const categoryOptions = document.querySelectorAll('input[type="checkbox"]');
+
+        function displayProducts(page, products) {
+            console.log(products);
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const displayedProducts = products.slice(startIndex, endIndex);
+
+            productContainer.innerHTML = '';
+
+            displayedProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('col-md-4', 'product-card');
+                productCard.innerHTML = `
+                    <div class="card" style="height="100% !important">
+                        <div style="position: relative">
+                                <div class="tags" style="position: absolute; top: 10px; left: 10px">
+                                    <span class="badge badge-primary">New</span>
+                                    <!-- <span class="badge badge-danger">Best Seller</span> -->
+                                </div>
+                                <button class="btn btn-outline-primary"
+                                    style="position: absolute; top: 10px; right: 10px">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <img src="${product.image}"
+                                    class="card-img-top" alt="Product 1" />
+                            </div>
+                        <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="card-text">$${product.price.toFixed(2)}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <button class="btn btn-outline-success">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                    </div>
+                `;
+                productContainer.appendChild(productCard);
+            });
+
+            displayPagination(products);
+        }
+
+        function displayPagination(products) {
+            const totalPages = Math.ceil(products.length / itemsPerPage);
+
+            paginationContainer.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const listItem = document.createElement('li');
+                listItem.textContent = i;
+                if (i === currentPage) {
+                    listItem.classList.add('active');
+                }
+                listItem.addEventListener('click', () => {
+                    currentPage = i;
+                    displayProducts(currentPage, products);
+                });
+                paginationContainer.appendChild(listItem);
+            }
+        }
+
+        function applyFilters() {
+            const sortValue = sortSelect.value;
+            const priceRange = priceRangeInput.value;
+
+
+            const selectedCategories = Array.from(categoryOptions)
+                .filter(option => option.checked)
+                .map(option => option.value);
+
+            console.log(selectedCategories)
+
+            const filteredProducts = products.filter(product => {
+                const isPriceInRange = product.price <= priceRange;
+                const isCategoryMatch = selectedCategories.includes(product.category);
+                return isPriceInRange && (selectedCategories.length === 0 || isCategoryMatch);
+            });
+
+
+            if (sortValue === 'price') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortValue === 'name') {
+                filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+
+            currentPage = 1;
+            displayProducts(currentPage, filteredProducts);
+
+            priceOutput.textContent = `$0 - $${priceRange}`;
+        }
+
+        sortSelect.addEventListener('change', applyFilters);
+
+
+        displayProducts(currentPage, products);
+
+        priceRangeInput.addEventListener('input', applyFilters);
+        categoryOptions.forEach(option => option.addEventListener('change', applyFilters));
+    </script>
+</body>
+
+</html>
