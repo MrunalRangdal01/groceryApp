@@ -185,6 +185,32 @@
             margin: 10px;
             /* Add space between items */
         }
+
+        .cardT {
+            width: 500px;
+            margin: 0 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-top: solid 3px;
+            border-color: rgb(202, 224, 15);
+            background-color: rgb(235, 237, 243);
+        }
+
+        /* Styles for container */
+        .cardT-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            /* Ensures cards stay in a single line */
+            overflow-x: auto;
+            /* Adds horizontal scroll if cards overflow */
+            padding: 20px 0;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 
@@ -418,47 +444,63 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <h2>Testimonials</h2>
-        <div class="owl-carousel owl-theme" id="testimonial-carousel">
-            <div class="item">
-                <div class="testimonial-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <h6>Rohit Sharma</h6>
-                </div>
+    <div class="container mt-4 text-center" style="display: block; justify-items: center;">
+        <label style="font-size: 20px;color: rgb(202,224,15);"><b>Testimonials</b></label>
+        <h3><b>What Our Customers Saying</b></h3>
+
+        <div class="cardT-row">
+            <!-- Card 1 -->
+            <div class="cardT">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo eum laborum soluta nihil voluptatibus
+                    repudiandae dolore commodi, magnam, natus consequuntur provident temporibus sint quibusdam ut a at
+                    qui architecto incidunt.
+                </p>
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+
+                <br>
+                <span><b>Alina Parker <span style="font-size: 10px; color:rgb(202,224,15)">Ceo, GTD</span></b></span>
+
             </div>
 
-            <div class="item">
-                <div class="testimonial-content">
-                    <p>Praesent vehicula tortor vel feugiat. Nulla facilisi.</p>
-                    <h6>Shami</h6>
-                </div>
+            <!-- Card 2 -->
+            <div class="cardT">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, cumque perferendis inventore dolorem
+                    eum ad! Pariatur rerum cum molestiae. Quam neque et iusto? Consequuntur, distinctio officia rerum ex
+                    dolorem perferendis?
+                </p>
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <br>
+                <span><b>Alina Parker <span style="font-size: 10px; color:rgb(202,224,15)">Ceo, GTD</span></b></span>
             </div>
-            <div class="item">
-                <div class="testimonial-content">
-                    <p>Vestibulum at felis id urna posuere euismod.</p>
-                    <h6>Kane Williamson</h6>
-                </div>
-            </div>
-            <div class="item">
-                <div class="testimonial-content">
-                    <p>Vestibulum at felis id urna posuere euismod.</p>
-                    <h6>joe Root</h6>
-                </div>
-            </div>
-            <div class="item">
-                <div class="testimonial-content">
-                    <p>Vestibulum at felis id urna posuere euismod.</p>
-                    <h6>David warner</h6>
-                </div>
-            </div>
-            <div class="item">
-                <div class="testimonial-content">
-                    <p>Vestibulum at felis id urna posuere euismod.</p>
-                    <h6>Kholi</h6>
-                </div>
+
+            <!-- Card 3 -->
+            <div class="cardT">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor ex sint accusantium. Officia
+                    consequatur recusandae totam quae sit. Cum natus eligendi incidunt corporis eos sit exercitationem
+                    facere possimus quisquam!
+                </p>
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <img src="assets/svg/starSolidYellow.svg" alt="" width="10">
+                <br>
+                <span><b>Kevin Andrew <span style="font-size: 10px; color:rgb(202,224,15)">Manager,
+                            Rex</span></b></span>
             </div>
         </div>
+
     </div>
 
 
@@ -484,29 +526,30 @@
 
 
 
-    <section class="bg-secondary text-light py-4">
+    <section class="text-light py-4" style="background-color: rgb(202,224,15); margin-inline: 120px;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Subscribe to Our Newsletter</h5>
-                    <p>Stay updated with our latest news and updates.</p>
+            <div class="row" style="margin-left: 220px;; align-items: center; position: relative;">
+                <div class="col-md-4" style="position: absolute; left: -100px;">
+                    <img src="assets/basket.png" alt="" width="250">
                 </div>
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter your email" />
+                <div class="col-md-8">
+                    <h3 style=" margin-left: 175px;">Subscribe to Our Newsletter</h3>
+                    <div class="input-group" style="margin-left:20px ;" style="width: 600px;">
+                        <input type="email" style="width: 20px; margin-left: 155px;" class="form-control" placeholder="Enter your email" />
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
+                            <button class="btn text-light" style="background-color:rgb(2, 48, 32);" type="button">Subscribe</button>
                         </div>
                     </div>
                 </div>
+            </div>            
             </div>
-        </div>
+
     </section>
-    <footer class="bg-dark text-light py-4">
+    <footer class="text-light py-4 text-light" style="background-color:rgb(2, 48, 32); text-decoration: none;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5 class="mb-3">Quick Links</h5>
+            <div class="row" style=" margin-top: 50px;">
+                <div class="col-md-3">
+                    <h5 class="mb-3">Store Location</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
@@ -514,15 +557,26 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3">Important Links</h5>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Useful Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h5 class="mb-3">Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Fruits and Vegetables</a></li>
+                        <li><a href="#">Dairy Products</a></li>
+                        <li><a href="#">Package Foods</a></li>
+                        <li><a href="#">Beverage</a></li>
+                        <li><a href="#">Health and Wellness</a></li>
+                        <li><a href="#">Meat Varities</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Opening Hours</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Fruits and Vegetables</a></li>
                         <li><a href="#">Dairy Products</a></li>
@@ -534,19 +588,7 @@
                 </div>
             </div>
 
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2023 Your Website. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-right">
-                    <div class="input-group" style="width: 50%;">
-                        <input type="email" class="form-control" placeholder="Enter your email" />
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -634,7 +676,7 @@
 
         ];
 
-        const itemsPerPage = 5;
+        const itemsPerPage = 4;
         let currentPage = 1;
 
         const productContainer = document.getElementById('product-container');
@@ -647,7 +689,6 @@
         const categoryOptions = document.querySelectorAll('input[type="checkbox"]');
 
         function displayProducts(page, products) {
-            console.log(products);
             const startIndex = (page - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
             const displayedProducts = products.slice(startIndex, endIndex);
@@ -697,6 +738,31 @@
 
             paginationContainer.innerHTML = '';
 
+            // for (let i = 1; i <= totalPages; i++) {
+            //     const listItem = document.createElement('li');
+            //     listItem.textContent = i;
+            //     if (i === currentPage) {
+            //         listItem.classList.add('active');
+            //     }
+            //     listItem.addEventListener('click', () => {
+            //         currentPage = i;
+            //         displayProducts(currentPage, products);
+            //     });
+            //     paginationContainer.appendChild(listItem);
+            // }
+
+            paginationContainer.innerHTML = ''; // Clear existing pagination buttons
+            const prevButton = document.createElement('li');
+            prevButton.innerHTML = "Prev"
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayProducts(currentPage, products);
+                    updatePagination();
+                }
+            });
+            paginationContainer.appendChild(prevButton);
+
             for (let i = 1; i <= totalPages; i++) {
                 const listItem = document.createElement('li');
                 listItem.textContent = i;
@@ -706,9 +772,21 @@
                 listItem.addEventListener('click', () => {
                     currentPage = i;
                     displayProducts(currentPage, products);
+                    updatePagination();
                 });
                 paginationContainer.appendChild(listItem);
             }
+
+            const nextButton = document.createElement('li');
+            nextButton.textContent = 'Next';
+            nextButton.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayProducts(currentPage, products);
+                    updatePagination();
+                }
+            });
+            paginationContainer.appendChild(nextButton);
         }
 
         function applyFilters() {
