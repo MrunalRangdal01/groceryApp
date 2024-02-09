@@ -250,7 +250,7 @@
                     <div class="content">
                         <span>Home <img src="assets/svg/arrowRight.svg" width="10"> Shop</span>
                         <br>
-                        <span><b>Shop</b></span>
+                        <span style="font-size: 40px;"><b>Shop</b></span>
                     </div>
                 </div>
             </div>
@@ -744,20 +744,6 @@
             const totalPages = Math.ceil(products.length / itemsPerPage);
 
             paginationContainer.innerHTML = '';
-
-            // for (let i = 1; i <= totalPages; i++) {
-            //     const listItem = document.createElement('li');
-            //     listItem.textContent = i;
-            //     if (i === currentPage) {
-            //         listItem.classList.add('active');
-            //     }
-            //     listItem.addEventListener('click', () => {
-            //         currentPage = i;
-            //         displayProducts(currentPage, products);
-            //     });
-            //     paginationContainer.appendChild(listItem);
-            // }
-
             paginationContainer.innerHTML = ''; // Clear existing pagination buttons
             const prevButton = document.createElement('li');
             prevButton.innerHTML = "Prev"
@@ -804,8 +790,6 @@
             const selectedCategories = Array.from(categoryOptions)
                 .filter(option => option.checked)
                 .map(option => option.value);
-
-            console.log(selectedCategories)
 
             const filteredProducts = products.filter(product => {
                 const isPriceInRange = product.price <= priceRange;
